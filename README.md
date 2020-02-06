@@ -13,4 +13,4 @@ if you want use this package, you should install [Jellyfish](https://github.com/
 
 Usage
 ------------
-Instruction of use are available in the doc directory.
+Instruction of use are available in the [doc](https://github.com/SepidehM/simple_kraken/tree/master/doc) directory.
