@@ -10,3 +10,7 @@ Kraken is a system for assigning taxonomic labels to short DNA sequences, usuall
 Installation
 ------------
 if you want use this package, you should install [Jellyfish](https://github.com/gmarcais/Jellyfish) package and g++ version 11 or higher.
+
+Usage
+------------
+Instruction of use are available in the doc directory.
