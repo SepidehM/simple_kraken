@@ -102,6 +102,9 @@ After doing the previous two steps, we can use this package for scoring to `quer
 if you want make fastq file from genome, use my python code in [folder python]().
 
 
+
+#### Start simple-kraken with help: 
+
 ```
 $ ./simple-kraken.sh -h
 
@@ -164,6 +167,13 @@ at first, we want reduce size of `output_count_in_file.txt`. this file divide 2 
 ```
 ./simple-kraken.sh -r  ADDR_FILE/output_count_in_file.txt
 ```
+result:
+```
+your file name:ADDR_FILE/output_count_in_file.txt
+start !
+write in file kemrs
+write in file seq node
+```
 
 #### Outputs(Examples):
 ##### 2.1)output_kmers.txt:
@@ -177,7 +187,16 @@ this file contain genome numbers that have kmer.
 ### 3) LCA:
 atfer find all genome numbers for each kmer, we should find least common ancestor for each kmer.
 ```
+./simple-kraken.sh -l ADDR_FILE/txonomy_tree.txt ADDR_FILE/seq_id_to_tax_id.txt ADDR_FILE/output_seq_node.txt
 ```
+result:
+```
+start !
+start !
+start lca!
+
+```
+
 #### Outputs(Examples):
 ##### 3.1)output_lca_kmers.txt
 this file contain lca for each kmer.
