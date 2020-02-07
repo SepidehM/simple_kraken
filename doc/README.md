@@ -98,13 +98,52 @@ YOUR_ADDRESS_FILE/ GCF_000195875.1_ASM19587v1_genomic.fna
 ## Starting Simple-kraken
 After doing the previous two steps, we can use this package for scoring to `query.fastq` file and find best match in taxonomy tree.
 
-
 #### Notice: 
 if you want make fastq file from genome, use my python code in [folder python]().
 
+
+```
+$ ./simple-kraken.sh -h
+
+   -r, --reduce        reduce output_count_in_file.txt and convert two file
+			 ---> input: ADDR_FILE/output_count_in_file.txt
+                       ---> output:
+                       ---> 	  1) output_kmers.txt
+                       ---> 	  2) output_seq_node.txt
+
+   -l, --lca           find lca for each kmer after reduce output_count_in_file.txt
+  			 ---> input:
+                       ---> 	  1) ADDR_FILE/txonomy_tree.txt
+                       ---> 	  2) ADDR_FILE/seq_id_to_tax_id.txt
+                       ---> 	  3) ADDR_FILE/output_seq_node.txt
+                       ---> output: output_lca_kmers.txt
+
+   -m, --minimize      make minimzer for kmer
+			 ---> input:
+                       ---> 	  1) ADDR_FILE/output_kmers.txt
+                       ---> 	  2) #mimizer_size
+           		 ---> output:
+                       ---> 	  1) output_hash_minimizer_to_hash_kmer.txt
+                       ---> 	  2) output_hash_kmer_to_kmer.txt
+   -q, --query         find best match taxID for each reads
+			 ---> input:
+                       ---> 	  #) No need type name file, these files should be
+				     exist in your computer if you call reduce,lca and minimize befor
+                       ---> 	  1) #kmer_size
+                       ---> 	  2) #mimizer_size
+                       ---> 	  3) ADDR_FILE/query.fastq
+           		 ---> output:
+                       ---> 	  1) output_taxID_ReadID.txt
+
+ [Simple-Kraken Doc] : (https://github.com/SepidehM/simple_kraken/blob/master/doc/README.md)
+
+```
+
+
+
 ### Steps :
 
-#### 1) Make File: 
+### 1) Make File: 
 use make file in folder simple-kraken
 
 ```
@@ -120,9 +159,10 @@ g++     cal_score_for_reads.cpp   -o cal_score_for_reads
 g++     make_minimizer.cpp   -o make_minimizer
 ```
 
-#### 2) Reduce:
+### 2) Reduce:
 at first, we want reduce size of `output_count_in_file.txt`. this file divide 2 parts.
 ```
+./simple-kraken.sh -r  ADDR_FILE/output_count_in_file.txt
 ```
 
 #### Outputs(Examples):
@@ -134,7 +174,7 @@ this file contain genome numbers that have kmer.
 
 
 
-#### 3) LCA:
+### 3) LCA:
 atfer find all genome numbers for each kmer, we should find least common ancestor for each kmer.
 ```
 ```
@@ -144,7 +184,7 @@ this file contain lca for each kmer.
 
 
 
-#### 4) Minimize:
+### 4) Minimize:
 after find all lca for each kmer, we should find minimizer for kmers and for reduce size, we use hash function.
 ```
 ```
@@ -157,7 +197,7 @@ this file contain hash of minimizer of each kmer in fisrt column and hash of kme
 this file contain hash of kmers in fisrt column and ID of kmers in second column.
 
 
-#### 5) Query:
+### 5) Query:
 after minimize kmers, we get query file and find best match for each read.
 ```
 ```
