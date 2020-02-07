@@ -103,6 +103,28 @@ if you want make fastq file from genome, use my python code in [folder python]()
 
 
 
+
+
+
+
+### Steps :
+
+### 1) Make File: 
+use make file in folder simple-kraken
+
+```
+$ make
+```
+
+result:
+
+```
+g++     reduce_count_file.cpp   -o reduce_count_file
+g++     lca_for_kmers.cpp   -o lca_for_kmers
+g++     cal_score_for_reads.cpp   -o cal_score_for_reads
+g++     make_minimizer.cpp   -o make_minimizer
+```
+
 #### Start simple-kraken with help: 
 
 ```
@@ -143,25 +165,6 @@ $ ./simple-kraken.sh -h
 ```
 
 
-
-### Steps :
-
-### 1) Make File: 
-use make file in folder simple-kraken
-
-```
-$ make
-```
-
-result:
-
-```
-g++     reduce_count_file.cpp   -o reduce_count_file
-g++     lca_for_kmers.cpp   -o lca_for_kmers
-g++     cal_score_for_reads.cpp   -o cal_score_for_reads
-g++     make_minimizer.cpp   -o make_minimizer
-```
-
 ### 2) Reduce:
 at first, we want reduce size of `output_count_in_file.txt`. this file divide 2 parts.
 ```
@@ -194,7 +197,7 @@ result:
 start !
 start !
 start lca!
-
+write lca kmers
 ```
 
 #### Outputs(Examples):
@@ -206,6 +209,11 @@ this file contain lca for each kmer.
 ### 4) Minimize:
 after find all lca for each kmer, we should find minimizer for kmers and for reduce size, we use hash function.
 ```
+./simple-kraken.sh -m ADDR_FILE/output_kmers.txt 15
+```
+result:
+```
+start make minimizer from kmer and reverse_com !
 ```
 
 #### Outputs(Examples):
@@ -220,6 +228,14 @@ this file contain hash of kmers in fisrt column and ID of kmers in second column
 after minimize kmers, we get query file and find best match for each read.
 ```
 ```
+result:
+```
+start !
+start !
+start lca!
+write lca kmers
+```
+
 
 #### Outputs(Examples):
 ##### 5.1)output_taxID_ReadID.txt
