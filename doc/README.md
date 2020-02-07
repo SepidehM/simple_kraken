@@ -11,7 +11,8 @@ this file show order of nodes in taxonomy tree. The first column should contain 
 #### 2)`seq_id_to_tax_id.txt`:
 The taxonomic tree leaves represent our genomes.With considering that the Jellyfish tool receives genomic files in alphabetical order, it is necessary to determine which nodes are associated with genome files.For this reason, in this file, put id that startin with zero, in first column and put node number in second coulmn.
 
-
+##### Example of Taxonomy tree (extract from [itol.embl.de](https://itol.embl.de/itol.cgi) site):
+![TaX tree](https://github.com/SepidehM/simple_kraken/blob/master/doc/taxonomy-tree.png)
 
 ## Make DB 
 After make Taxonomy tree and put your genome file in folder, you can run `simple-kraken-db.sh`. this file get `$folder_address`,`$kmer_size`, `$jf file size`, and use [JellyFish](https://github.com/gmarcais/Jellyfish/tree/master/doc) tool for make DB.
