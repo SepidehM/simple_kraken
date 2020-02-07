@@ -11,8 +11,61 @@ this file show order of nodes in taxonomy tree. The first column should contain 
 #### 2)`seq_id_to_tax_id.txt`:
 The taxonomic tree leaves represent our genomes.With considering that the Jellyfish tool receives genomic files in alphabetical order, it is necessary to determine which nodes are associated with genome files.For this reason, in this file, put id that startin with zero, in first column and put node number in second coulmn.
 
-##### Example of Taxonomy tree (extract from [itol.embl.de](https://itol.embl.de/itol.cgi) site):
+###### Example of Taxonomy tree (extract from [itol.embl.de](https://itol.embl.de/itol.cgi) site):
 ![TaX tree](https://github.com/SepidehM/simple_kraken/blob/master/doc/taxonomy-tree.png)
+
+###### Exapmle of `taxonomy_tree.txt`:
+```
+2 1
+3 2
+4 2
+5 4
+6 4
+7 1
+8 7
+9 7
+10 9
+11 9
+12 11
+13 11
+14 13
+15 13
+16 15
+17 15
+18 17
+19 17
+```
+
+###### Exapmle of `Order of bacteria fasta file in genome folder`:
+```
+ ['GCF_000762305.1', 'Clostridium tetani'],
+ ['GCF_000009685.1', 'Clostridium perfringens str. 13'],
+ ['GCF_002006385.1', 'Clostridium acetobutylicum'],
+ ['GCF_000011445.1', 'Mycoplasma mycoides subsp. mycoides SC str. PG1'],
+ ['GCF_000195875.1', 'Mycoplasma pulmonis UAB CTIP'],
+ ['GCF_000171355.1', 'Ureaplasma parvum serovar 14 str. ATCC 33697'],
+ ['GCF_000011225.1', 'Mycoplasma penetrans HF-2'],
+ ['GCF_000286675.1', 'Mycoplasma gallisepticum VA94_7994-1-7P'],
+ ['GCF_000319675.2', 'Mycoplasma pneumoniae PI 1428'],
+ ['GCF_000027325.1', 'Mycoplasma genitalium G37'],
+ 
+```
+
+###### Exapmle of `seq_id_to_tax_id.txt`:
+```
+0 6
+1 14
+2 8
+3 19
+4 12
+5 10
+6 16
+7 18
+8 5
+9 3
+```
+
+
 
 ## Make DB 
 After make Taxonomy tree and put your genome file in folder, you can run `simple-kraken-db.sh`. this file get `$folder_address`,`$kmer_size`, `$jf file size`, and use [JellyFish](https://github.com/gmarcais/Jellyfish/tree/master/doc) tool for make DB.
