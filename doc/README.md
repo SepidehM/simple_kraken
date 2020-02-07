@@ -65,6 +65,9 @@ The taxonomic tree leaves represent our genomes.With considering that the Jellyf
 9 3
 ```
 
+#### Notice: if you want see all kind of bacteria in assembly file and extract some of them, use my python code in [folder python]().
+
+
 
 
 ## Make DB 
@@ -95,3 +98,70 @@ YOUR_ADDRESS_FILE/ GCF_000195875.1_ASM19587v1_genomic.fna
 ## Starting Simple-kraken
 After doing the previous two steps, we can use this package for scoring to `query.fastq` file and find best match in taxonomy tree.
 
+
+#### Notice: 
+if you want make fastq file from genome, use my python code in [folder python]().
+
+### Steps :
+
+#### 1) Make File: 
+use make file in folder simple-kraken
+
+```
+$ make
+```
+
+result:
+
+```
+g++     reduce_count_file.cpp   -o reduce_count_file
+g++     lca_for_kmers.cpp   -o lca_for_kmers
+g++     cal_score_for_reads.cpp   -o cal_score_for_reads
+g++     make_minimizer.cpp   -o make_minimizer
+```
+
+#### 2) Reduce:
+at first, we want reduce size of `output_count_in_file.txt`. this file divide 2 parts.
+```
+```
+
+#### Outputs(Examples):
+##### 2.1)output_kmers.txt:
+this file contain all kmers. 
+
+##### 2.2)output_seq_node.txt:
+this file contain genome numbers that have kmer.
+
+
+
+#### 3) LCA:
+atfer find all genome numbers for each kmer, we should find least common ancestor for each kmer.
+```
+```
+#### Outputs(Examples):
+##### 3.1)output_lca_kmers.txt
+this file contain lca for each kmer.
+
+
+
+#### 4) Minimize:
+after find all lca for each kmer, we should find minimizer for kmers and for reduce size, we use hash function.
+```
+```
+
+#### Outputs(Examples):
+##### 4.1)output_hash_minimizer_to_hash_kmer.txt
+this file contain hash of minimizer of each kmer in fisrt column and hash of kmers in second column.
+
+##### 4.1)output_hash_kmer_to_kmer.txt
+this file contain hash of kmers in fisrt column and ID of kmers in second column.
+
+
+#### 5) Query:
+after minimize kmers, we get query file and find best match for each read.
+```
+```
+
+#### Outputs(Examples):
+##### 5.1)output_taxID_ReadID.txt
+this file conation, taxID in first column and ReadID that assigned to it in second column.
