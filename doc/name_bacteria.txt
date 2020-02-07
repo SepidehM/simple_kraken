@@ -1,0 +1,23 @@
+ ['GCF_000762305.1', 'Clostridium tetani'],
+ ['GCF_000009685.1', 'Clostridium perfringens str. 13'],
+ ['GCF_002006385.1', 'Clostridium acetobutylicum'],
+ ['GCF_000011445.1', 'Mycoplasma mycoides subsp. mycoides SC str. PG1'],
+ ['GCF_000195875.1', 'Mycoplasma pulmonis UAB CTIP'],
+ ['GCF_000171355.1', 'Ureaplasma parvum serovar 14 str. ATCC 33697'],
+ ['GCF_000011225.1', 'Mycoplasma penetrans HF-2'],
+ ['GCF_000286675.1', 'Mycoplasma gallisepticum VA94_7994-1-7P'],
+ ['GCF_000319675.2', 'Mycoplasma pneumoniae PI 1428'],
+ ['GCF_000027325.1', 'Mycoplasma genitalium G37'],
+
+
+======================
+GCF_000009685.1_ASM968v1_genomic.fna	NC_003366.1	Clostridium perfringens str. 13	6
+GCF_000011225.1_ASM1122v1_genomic.fna	NC_004432.1	Mycoplasma penetrans HF-2	14
+GCF_000011445.1_ASM1144v1_genomic.fna	NC_005364.2	Mycoplasma mycoides subsp. mycoides SC str. PG1	8
+GCF_000027325.1_ASM2732v1_genomic.fna	NC_000908.2	Mycoplasma genitalium G37	19
+GCF_000171355.1_ASM17135v1_genomic.fna	NZ_ABER01000008.1	Ureaplasma parvum serovar 14 str. ATCC 33697	12
+GCF_000195875.1_ASM19587v1_genomic.fna	NC_002771.1	Mycoplasma pulmonis UAB CTIP	10
+GCF_000286675.1_ASM28667v1_genomic.fna	NC_018406.1	Mycoplasma gallisepticum VA94_7994-1-7P	16
+GCF_000319675.2_ASM31967v2_genomic.fna	NZ_CP010538.1	Mycoplasma pneumoniae PI 1428	18
+GCF_000762305.1_ASM76230v1_genomic.fna	NZ_JRGJ01000001.1	Clostridium tetani	5
+GCF_002006385.1_ASM200638v1_genomic.fna	NZ_LZYX01000001.1	Clostridium acetobutylicum	3
