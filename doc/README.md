@@ -214,6 +214,8 @@ after find all lca for each kmer, we should find minimizer for kmers and for red
 result:
 ```
 start make minimizer from kmer and reverse_com !
+write hash minimizer , hash kmer
+write hash of kmers , kmers
 ```
 
 #### Outputs(Examples):
@@ -227,13 +229,17 @@ this file contain hash of kmers in fisrt column and ID of kmers in second column
 ### 5) Query:
 after minimize kmers, we get query file and find best match for each read.
 ```
+./simple-kraken.sh -q 31 15 ADDR_FILE/query.fastq
 ```
 result:
 ```
-start !
-start !
-start lca!
-write lca kmers
+start read file!txonomy_tree.txt
+start read file output_hash_minimizer_to_hash_kmer.txt
+start read file output_hash_kmer_to_kmer.txt
+start read file output_kmers.txt
+start read file output_lca_kmers.txt
+start read fastq file !
+write TaxID , Read ID
 ```
 
 
